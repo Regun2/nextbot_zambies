@@ -4,8 +4,7 @@ ENT.Base = "terminator_nextbot_zambietemporal"
 DEFINE_BASECLASS( ENT.Base )
 
 ENT.PrintName = "Zombie Temporal Elite"
-ENT.Author    = "regunkyle"
-ENT.Spawnable = false
+ENT.Spawnable = true
 
 list.Set( "NPC", "terminator_nextbot_zambietemporalelite", {
     Name = "Zombie Temporal Elite",
@@ -16,7 +15,7 @@ list.Set( "NPC", "terminator_nextbot_zambietemporalelite", {
 ENT.TERM_MODELSCALE = 1.4
 ENT.SpawnHealth = 900
 ENT.FistDamageMul = 1.2
-ENT.CollisionBounds = { Vector( -15, -15, 0 ),  Vector( 15, 15, 45 ) }
+
 ENT.TemporalEffectColor = 255 + 50 * 256 + 50 * 65536
 
 ENT.TemporalTrailColor = Color(255, 50, 50, 255)
@@ -34,7 +33,7 @@ ENT.MySpecialActions = {
         end,
     },
     ["temporalize"] = {
-        inBind = IN_ATTACK2,
+        inBind = IN_ATTACK2, -- Mouse 2
         drawHint = true,
         name = "Temporalize",
         desc = "Temporarily temporalize a nearby zambie.",
@@ -173,11 +172,13 @@ function ENT:FindValidTemporalizeTarget()
     for _, ally in ipairs( allies ) do
         if IsValid( ally ) and ally.isTerminatorHunterChummy == "zambies" and ally ~= self and not ally.IsTemporalized then
             local class = ally:GetClass()
+            -- QOL: Cannot temporalize other temporals
             if class == "terminator_nextbot_zambietemporal" or class == "terminator_nextbot_zambietemporalelite" then
                 continue
             end
             
-            if ally:Health() > 8000 then
+            -- QOL: Max 2.5K health limit
+            if ally:Health() > 2500 then
                 continue
             end
             
@@ -255,7 +256,7 @@ function ENT:TEMPORAL_TryTemporalize()
                     ed2:SetColor( bestAlly.TemporalEffectColor )
                     util.Effect( "eff_temporal_warp_events", ed2 )
 
-                    bestAlly:EmitSound( "z_ezt_shadowcrab_appear" )
+                    bestAlly:EmitSound( "NPC_PoisonZombie.Alert" ) -- Replaced ezt appear sound
                     bestAlly.NextTemporalTeleport = CurTime() + math.Rand( 3, 5 )
                 end
             end
@@ -278,7 +279,7 @@ function ENT:Temporal_DoTeleport( targetPos )
     ed:SetColor(self.TemporalEffectColor)
     util.Effect( "eff_temporal_warp_events", ed )
 
-    self:EmitSound( "z_ezt_shadowcrab_appear" )
+    self:EmitSound( "NPC_PoisonZombie.Alert" ) -- Replaced ezt appear sound
 end
 
 function ENT:Temporal_SpawnVanishCorpse( posOverride )
@@ -318,7 +319,7 @@ function ENT:Temporal_SpawnVanishCorpse( posOverride )
     ed:SetColor(self.TemporalEffectColor)
     util.Effect( "eff_temporal_warp_events", ed )
 
-    self:EmitSound( "z_ezt_shadowcrab_vanish" )
+    self:EmitSound( "NPC_PoisonZombie.Pain" ) -- Replaced ezt vanish sound
 end
 
 function ENT:AdditionalInitialize()
