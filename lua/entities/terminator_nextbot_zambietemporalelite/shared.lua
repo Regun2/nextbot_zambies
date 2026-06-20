@@ -34,7 +34,7 @@ ENT.MySpecialActions = {
         end,
     },
     ["temporalize"] = {
-        inBind = IN_ATTACK2, -- Mouse 2
+        inBind = IN_ATTACK2,
         drawHint = true,
         name = "Temporalize",
         desc = "Temporarily temporalize a nearby zambie.",
