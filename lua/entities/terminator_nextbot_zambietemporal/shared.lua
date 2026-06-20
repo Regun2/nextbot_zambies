@@ -62,7 +62,6 @@ ENT.MySpecialActions = {
     }
 }
 
--- Replaced ezt sounds with standard Poison Zombie sounds
 ENT.term_LoseEnemySound = "NPC_PoisonZombie.Idle"
 ENT.term_CallingSound = "NPC_PoisonZombie.Call"
 ENT.term_CallingSmallSound = "NPC_PoisonZombie.Call"
@@ -160,7 +159,7 @@ function ENT:Temporal_SpawnVanishCorpse( posOverride )
     end
     util.Effect( "eff_temporal_warp_events", ed )
 
-    self:EmitSound( "NPC_PoisonZombie.Pain" ) -- Replaced ezt vanish sound
+    self:EmitSound( "NPC_PoisonZombie.Pain" )
 end
 
 function ENT:Temporal_DoTeleport( targetPos )
@@ -180,7 +179,7 @@ function ENT:Temporal_DoTeleport( targetPos )
     end
     util.Effect( "eff_temporal_warp_events", ed )
 
-    self:EmitSound( "NPC_PoisonZombie.Alert" ) -- Replaced ezt appear sound
+    self:EmitSound( "NPC_PoisonZombie.Alert" )
 end
 
 function ENT:TEMPORAL_TryWarp(driver)
