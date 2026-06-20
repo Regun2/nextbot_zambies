@@ -4,8 +4,7 @@ ENT.Base = "terminator_nextbot_zambie"
 DEFINE_BASECLASS( ENT.Base )
 
 ENT.PrintName = "Zombie Temporal"
-ENT.Author    = "regunkyle"
-ENT.Spawnable = false
+ENT.Spawnable = true
 
 list.Set( "NPC", "terminator_nextbot_zambietemporal", {
     Name = "Zombie Temporal",
@@ -62,14 +61,15 @@ ENT.MySpecialActions = {
     }
 }
 
-ENT.term_LoseEnemySound = "z_ezt_shadowzombie_idle"
-ENT.term_CallingSound = "z_ezt_shadowzombie_rattle"
-ENT.term_CallingSmallSound = "z_ezt_shadowzombie_rattle"
-ENT.term_FindEnemySound = "z_ezt_shadowzombie_warning"
-ENT.term_AttackSound = "z_ezt_shadowzombie_scream"
-ENT.term_AngerSound = "z_ezt_shadowzombie_warning"
-ENT.term_DamagedSound = "z_ezt_shadowzombie_pain"
-ENT.term_DieSound = "z_ezt_shadowcrab_vanish"
+-- Replaced ezt sounds with standard Poison Zombie sounds
+ENT.term_LoseEnemySound = "NPC_PoisonZombie.Idle"
+ENT.term_CallingSound = "NPC_PoisonZombie.Call"
+ENT.term_CallingSmallSound = "NPC_PoisonZombie.Call"
+ENT.term_FindEnemySound = "NPC_PoisonZombie.Alert"
+ENT.term_AttackSound = "NPC_PoisonZombie.Attack"
+ENT.term_AngerSound = "NPC_PoisonZombie.Alert"
+ENT.term_DamagedSound = "NPC_PoisonZombie.Pain"
+ENT.term_DieSound = "NPC_PoisonZombie.Die"
 ENT.term_JumpSound = "npc/zombie/foot1.wav"
 
 if CLIENT then
@@ -159,7 +159,7 @@ function ENT:Temporal_SpawnVanishCorpse( posOverride )
     end
     util.Effect( "eff_temporal_warp_events", ed )
 
-    self:EmitSound( "z_ezt_shadowcrab_vanish" )
+    self:EmitSound( "NPC_PoisonZombie.Pain" ) -- Replaced ezt vanish sound
 end
 
 function ENT:Temporal_DoTeleport( targetPos )
@@ -179,7 +179,7 @@ function ENT:Temporal_DoTeleport( targetPos )
     end
     util.Effect( "eff_temporal_warp_events", ed )
 
-    self:EmitSound( "z_ezt_shadowcrab_appear" )
+    self:EmitSound( "NPC_PoisonZombie.Alert" ) -- Replaced ezt appear sound
 end
 
 function ENT:TEMPORAL_TryWarp(driver)
