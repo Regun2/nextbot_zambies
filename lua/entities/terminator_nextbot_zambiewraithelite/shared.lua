@@ -34,8 +34,9 @@ ENT.zamb_LookAheadWhenRunning = true -- turn this on since we do big bursts of d
 
 ENT.FistDamageMul = 6
 ENT.FistRangeMul = 2
-ENT.zamb_MeleeAttackSpeed = 1.5
-ENT.zamb_MeleeAttackHitFrameMul = 17
+ENT.FistAttackSpeedMul = 1.5
+ENT.FistAttackAdditionalDelay = 0.33
+ENT.FistHitFrameMul = 17
 ENT.DuelEnemyDist = 650
 
 local FAST_ZAMBIE_MODEL = "models/Zombie/Fast.mdl"
@@ -49,7 +50,7 @@ ENT.CollisionBounds = { Vector( -10, -10, 0 ), Vector( 10, 10, 40 ) }
 ENT.MyPhysicsMass = 100
 
 ENT.zamb_CallAnim = "BR2_Roar"
-ENT.zamb_AttackAnim = "BR2_Attack"
+ENT.FistAttackAnim = "BR2_Attack"
 
 function ENT:AdditionalInitialize()
 

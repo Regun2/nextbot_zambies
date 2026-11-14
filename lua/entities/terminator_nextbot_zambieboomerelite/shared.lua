@@ -171,8 +171,8 @@ function ENT:EliteEnrage()
 
     self.FistDamageMul = 25
     self.FistRangeMul = 2
-    self.zamb_MeleeAttackSpeed = 2
-    self.zamb_MeleeAttackAdditionalDelay = -1
+    self.FistAttackSpeedMul = 2
+    self.FistAttackAdditionalDelay = -0.36
 
     for _, loop in ipairs( self.AngryLoopingSounds ) do
         self:StopSound( loop )

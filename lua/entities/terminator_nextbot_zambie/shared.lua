@@ -224,7 +224,7 @@ ENT.IdleActivityTranslations = {
 }
 
 ENT.zamb_CallAnim = nil
-ENT.zamb_AttackAnim = nil
+ENT.FistAttackAnim = ACT_GMOD_GESTURE_RANGE_ZOMBIE
 
 function ENT:DoHardcodedRelations()
     self.term_HardCodedRelations = {
@@ -453,7 +453,8 @@ local nextZombieCall = 0
 local nextLoneZombieCall = 0
 
 ENT.zamb_LookAheadWhenRunning = true
-ENT.zamb_MeleeAttackSpeed = 1.1
+ENT.FistAttackSpeedMul = 1.1
+ENT.FistAttackAdditionalDelay = 0.12 -- every zombie's delay is tied to its speed and attack anim length, keeping the swing rate they were tuned at. D*(1-1/speed) - 0.1*(speed-1)
 ENT.term_SoundPitchShift = 0
 ENT.term_SoundLevelShift = 0
 

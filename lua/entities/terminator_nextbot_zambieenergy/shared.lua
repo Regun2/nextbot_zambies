@@ -107,7 +107,8 @@ ENT.MoveSpeed = 300
 ENT.RunSpeed = 500
 
 ENT.FistDamageMul = 1
-ENT.zamb_MeleeAttackSpeed = 3
+ENT.FistAttackSpeedMul = 3
+ENT.FistAttackAdditionalDelay = 0.78
 ENT.FistDamageType = bit.bor( DMG_SHOCK, DMG_DISSOLVE )
 
 ENT.TERM_MODELSCALE = function() return math.Rand( 1.08, 1.10 ) end

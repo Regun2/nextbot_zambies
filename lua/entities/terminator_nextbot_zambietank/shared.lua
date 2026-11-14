@@ -39,9 +39,10 @@ ENT.AccelerationSpeed = 1000
 ENT.neverManiac = true
 
 ENT.zamb_LookAheadWhenRunning = nil
-ENT.zamb_MeleeAttackSpeed = 1
-ENT.zamb_MeleeAttackHitFrameMul = 1.25
-ENT.zamb_AttackAnim = ACT_GMOD_GESTURE_RANGE_ZOMBIE_SPECIAL -- ACT_RANGE_ATTACK1
+ENT.FistAttackSpeedMul = 1
+ENT.FistAttackAdditionalDelay = 0
+ENT.FistHitFrameMul = 1.25
+ENT.FistAttackAnim = ACT_GMOD_GESTURE_RANGE_ZOMBIE_SPECIAL -- ACT_RANGE_ATTACK1
 
 ENT.FistDamageMul = 15
 ENT.FistForceMul = 12

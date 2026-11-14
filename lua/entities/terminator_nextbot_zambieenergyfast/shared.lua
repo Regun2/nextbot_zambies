@@ -35,10 +35,11 @@ ENT.RunSpeed = 1000
 ENT.AccelerationSpeed = 450
 
 ENT.zamb_LookAheadWhenRunning = true
-ENT.zamb_MeleeAttackSpeed = 1.15
+ENT.FistAttackSpeedMul = 1.15
 
 ENT.FistDamageMul = 0.25
-ENT.zamb_MeleeAttackSpeed = 3
+ENT.FistAttackSpeedMul = 3
+ENT.FistAttackAdditionalDelay = 0.11
 ENT.DuelEnemyDist = 450
 
 ENT.TERM_MODELSCALE = function() return math.Rand( 1.10, 1.18 ) end
@@ -79,7 +80,7 @@ ENT.IdleActivityTranslations = {
 }
 
 ENT.zamb_CallAnim = "BR2_Roar"
-ENT.zamb_AttackAnim = ACT_MELEE_ATTACK1
+ENT.FistAttackAnim = ACT_MELEE_ATTACK1
 
 function ENT:AdditionalInitialize()
     self:SetModel( FAST_ZOMBIE_MODEL )

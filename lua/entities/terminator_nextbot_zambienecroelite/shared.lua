@@ -36,7 +36,7 @@ ENT.neverManiac = true
 ENT.FistDamageMul = 25
 ENT.FistForceMul = 20
 ENT.FistRangeMul = 2
-ENT.zamb_MeleeAttackHitFrameMul = 0.5
+ENT.FistHitFrameMul = 0.8
 
 ENT.PrefersVehicleEnemies = true
 

@@ -29,7 +29,8 @@ ENT.AccelerationSpeed = 750
 
 ENT.FistDamageMul = 4.0
 ENT.FistRangeMul = 2.5 -- bigger zombs need bigger range, cause they cant get as close to enemy
-ENT.zamb_MeleeAttackSpeed = 3
+ENT.FistAttackSpeedMul = 3
+ENT.FistAttackAdditionalDelay = 0.11
 
 ENT.HeightToStartTakingDamage = 4000
 ENT.FallDamagePerHeight = 0.3

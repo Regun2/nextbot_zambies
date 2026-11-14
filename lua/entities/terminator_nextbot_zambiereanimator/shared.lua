@@ -40,7 +40,7 @@ ENT.MoveSpeed = 500
 ENT.RunSpeed = 700
 ENT.AccelerationSpeed = 600
 
-ENT.zamb_MeleeAttackSpeed = 1
+ENT.FistAttackSpeedMul = 1
 
 ENT.FistDamageMul = 1.5
 ENT.FistForceMul = 1
@@ -69,7 +69,7 @@ ENT.IdleActivityTranslations = {
 }
 
 ENT.zamb_CallAnim = ACT_IDLE_ANGRY
-ENT.zamb_AttackAnim = ACT_MELEE_ATTACK1
+ENT.FistAttackAnim = ACT_MELEE_ATTACK1
 
 ENT.Term_BaseMsBetweenSteps = 300
 ENT.Term_FootstepMsReductionPerUnitSpeed = 0.5

@@ -30,9 +30,10 @@ ENT.StepHeight = 20
 
 ENT.SpawnHealth = 25
 ENT.FistDamageMul = 0.55
-ENT.zamb_MeleeAttackHitFrameMul = 4
-ENT.zamb_MeleeAttackSpeed = 1.75
-ENT.zamb_AttackAnim = ACT_MELEE_ATTACK1
+ENT.FistHitFrameMul = 4
+ENT.FistAttackSpeedMul = 1.75
+ENT.FistAttackAdditionalDelay = 0.27
+ENT.FistAttackAnim = ACT_MELEE_ATTACK1
 
 ENT.zamb_LookAheadWhenRunning = true -- mdl doesnt support different move/look angles
 local FAST_TORSO_MDL = "models/zombie/fast_torso.mdl"

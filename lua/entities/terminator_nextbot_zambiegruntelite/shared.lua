@@ -25,7 +25,8 @@ ENT.RunSpeed = 425
 ENT.AccelerationSpeed = 350
 
 ENT.FistDamageMul = 1.5
-ENT.zamb_MeleeAttackSpeed = 1.25
+ENT.FistAttackSpeedMul = 1.25
+ENT.FistAttackAdditionalDelay = 0.27
 
 ENT.TERM_MODELSCALE = function() return math.Rand( 1.15, 1.2 ) end
 ENT.CollisionBounds = { Vector( -14, -14, 0 ), Vector( 14, 14, 60 ) } -- this is then scaled by modelscale

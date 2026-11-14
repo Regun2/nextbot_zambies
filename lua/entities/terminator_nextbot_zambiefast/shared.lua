@@ -33,7 +33,8 @@ ENT.RunSpeed = 400
 ENT.AccelerationSpeed = 450
 
 ENT.zamb_LookAheadWhenRunning = true -- mdl doesnt support different move/look angles
-ENT.zamb_MeleeAttackSpeed = 1.15
+ENT.FistAttackSpeedMul = 1.15
+ENT.FistAttackAdditionalDelay = 0.05
 
 ENT.FistDamageMul = 0.25
 ENT.DuelEnemyDist = 450
@@ -63,7 +64,7 @@ ENT.IdleActivityTranslations = {
 }
 
 ENT.zamb_CallAnim = "BR2_Roar"
-ENT.zamb_AttackAnim = ACT_MELEE_ATTACK1 -- ACT_RANGE_ATTACK1
+ENT.FistAttackAnim = ACT_MELEE_ATTACK1 -- ACT_RANGE_ATTACK1
 
 function ENT:AdditionalInitialize()
     self:SetModel( FAST_ZAMBIE_MODEL )

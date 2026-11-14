@@ -39,7 +39,8 @@ ENT.CanUseStuff = true
 
 ENT.zamb_AlwaysFlank = true
 ENT.zamb_LookAheadWhenRunning = true -- turn this on since we do big bursts of damage unlike the normal fast z
-ENT.zamb_MeleeAttackSpeed = 1
+ENT.FistAttackSpeedMul = 1
+ENT.FistAttackAdditionalDelay = 0
 
 ENT.FistDamageMul = 2.25
 ENT.FistRangeMul = 1.5
@@ -72,7 +73,7 @@ ENT.IdleActivityTranslations = {
 }
 
 ENT.zamb_CallAnim = "BR2_Roar"
-ENT.zamb_AttackAnim = "BR2_Attack"
+ENT.FistAttackAnim = "BR2_Attack"
 
 function ENT:AdditionalInitialize()
     self:SetModel( FAST_ZAMBIE_MODEL )

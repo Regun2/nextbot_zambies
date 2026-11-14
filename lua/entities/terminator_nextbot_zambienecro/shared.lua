@@ -47,7 +47,8 @@ ENT.AccelerationSpeed = 1500
 ENT.neverManiac = true
 
 ENT.zamb_LookAheadWhenRunning = nil
-ENT.zamb_MeleeAttackSpeed = 1
+ENT.FistAttackSpeedMul = 1
+ENT.FistHitFrameMul = 0.85
 
 ENT.DuelEnemyDist = 350
 ENT.PrefersVehicleEnemies = false
@@ -85,7 +86,7 @@ ENT.IdleActivityTranslations = {
 local ACT_ZOM_RELEASECRAB = "releasecrab"
 
 ENT.zamb_CallAnim = ACT_ZOM_RELEASECRAB
-ENT.zamb_AttackAnim = ACT_MELEE_ATTACK1 -- ACT_RANGE_ATTACK1
+ENT.FistAttackAnim = ACT_MELEE_ATTACK1 -- ACT_RANGE_ATTACK1
 
 function ENT:AdditionalInitialize()
     self:SetModel( NECRO_ZAMBIE_MODEL )

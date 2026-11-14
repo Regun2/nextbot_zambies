@@ -33,9 +33,9 @@ ENT.grumpy_AccelerationSpeed = 250
 ENT.angry_AccelerationSpeed = 1000
 ENT.AccelerationSpeed = ENT.calm_AccelerationSpeed
 
-ENT.calm_MeleeAttackAdditionalDelay = 0
-ENT.grumpy_MeleeAttackAdditionalDelay = -0.5
-ENT.angry_MeleeAttackAdditionalDelay = -1
+ENT.calm_MeleeAttackAdditionalDelay = 0.64
+ENT.grumpy_MeleeAttackAdditionalDelay = 0.14
+ENT.angry_MeleeAttackAdditionalDelay = -0.36
 
 ENT.neverManiac = true
 
@@ -44,7 +44,8 @@ ENT.CanUseStuff = true
 ENT.zamb_LookAheadWhenRunning = true -- running anim doesnt support different move/look angles
 
 ENT.FistDamageMul = 1.25
-ENT.zamb_MeleeAttackSpeed = 2
+ENT.FistAttackSpeedMul = 2
+ENT.FistAttackAdditionalDelay = 0.64
 ENT.DuelEnemyDist = 600
 ENT.CloseEnemyDistance = 500
 
@@ -143,7 +144,7 @@ function ENT:AdditionalThink()
         self.AccelerationSpeed = ideal
         self.loco:SetAcceleration( self.AccelerationSpeed )
 
-        self.zamb_MeleeAttackAdditionalDelay = idealHit
+        self.FistAttackAdditionalDelay = idealHit
 
     end
 end

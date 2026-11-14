@@ -35,7 +35,8 @@ ENT.RunSpeed = 800
 ENT.AccelerationSpeed = 900
 
 ENT.FistDamageMul = 1.25
-ENT.zamb_MeleeAttackSpeed = 1.4
+ENT.FistAttackSpeedMul = 1.4
+ENT.FistAttackAdditionalDelay = 0.09
 
 ENT.HeightToStartTakingDamage = 10
 ENT.FallDamagePerHeight = 1

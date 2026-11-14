@@ -31,7 +31,8 @@ ENT.RunSpeed = 650
 ENT.AccelerationSpeed = 500
 
 ENT.zamb_LookAheadWhenRunning = true
-ENT.zamb_MeleeAttackSpeed = 2.5
+ENT.FistAttackSpeedMul = 2.5
+ENT.FistAttackAdditionalDelay = 0.13
 
 ENT.FistDamageMul = 0.65
 

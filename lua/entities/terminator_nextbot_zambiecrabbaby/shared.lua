@@ -29,8 +29,9 @@ ENT.DeccelerationSpeed = 350
 ENT.neverManiac = true
 
 ENT.zamb_LookAheadWhenRunning = true
-ENT.zamb_MeleeAttackSpeed = 2
-ENT.zamb_AttackAnim = ACT_GMOD_GESTURE_RANGE_ZOMBIE_SPECIAL -- ACT_RANGE_ATTACK1
+ENT.FistAttackSpeedMul = 2
+ENT.FistAttackAdditionalDelay = 0.48
+ENT.FistAttackAnim = ACT_GMOD_GESTURE_RANGE_ZOMBIE_SPECIAL -- ACT_RANGE_ATTACK1
 
 ENT.FistDamageMul = 0.75
 ENT.FistRangeMul = 0.5
@@ -68,7 +69,7 @@ ENT.IdleActivityTranslations = {
 }
 
 ENT.zamb_CallAnim = "rearup"
-ENT.zamb_AttackAnim = ACT_RANGE_ATTACK1
+ENT.FistAttackAnim = ACT_RANGE_ATTACK1
 
 ENT.term_CallingSound = false
 
