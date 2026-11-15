@@ -12,7 +12,7 @@ local zambieSpawnSet = {
     maxSpawnCount = 30,
     roundEndSound = "music/hl1_song26.mp3",
     roundStartSound = "music/hl2_song26.mp3",
-    chanceToBeVotable = 2.5,
+    chanceToBeVotable = 5,
     spawns = {
         {
             name = "zambie_boomer",

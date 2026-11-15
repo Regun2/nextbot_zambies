@@ -13,8 +13,8 @@ local zambieSpawnSet = {
     maxSpawnDist = "default", -- not close, they sprint at you from 3000 out
     roundEndSound = "music/hl1_song14.mp3",
     roundStartSound = "music/hl2_song8.mp3",
-    chanceToBeVotable = 0.5,
-    chanceToBeVotableWhenHard = 1,
+    chanceToBeVotable = 1,
+    chanceToBeVotableWhenHard = 2,
     spawns = {
         {
             hardRandomChance = 50,

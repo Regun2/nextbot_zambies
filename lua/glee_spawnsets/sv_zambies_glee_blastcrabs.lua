@@ -13,7 +13,7 @@ local zambieSpawnSet = {
     hordeSpawn = true,
     roundEndSound = "music/stingers/industrial_suspense1.wav",
     roundStartSound = "music/hl1_song6.mp3",
-    chanceToBeVotable = 0.5,
+    chanceToBeVotable = 0.1,
     chanceToBeVotableWhenHard = 1,
     spawns = {
         {
