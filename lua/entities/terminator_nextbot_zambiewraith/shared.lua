@@ -40,7 +40,8 @@ ENT.CanUseStuff = true
 ENT.zamb_AlwaysFlank = true
 ENT.zamb_LookAheadWhenRunning = true -- turn this on since we do big bursts of damage unlike the normal fast z
 ENT.FistAttackSpeedMul = 1
-ENT.FistAttackAdditionalDelay = 0
+ENT.FistAttackAdditionalDelay = 0.5
+ENT.FistHitFrameMul = 1.75
 
 ENT.FistDamageMul = 2.25
 ENT.FistRangeMul = 1.5

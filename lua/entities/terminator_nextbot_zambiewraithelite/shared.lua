@@ -35,7 +35,7 @@ ENT.zamb_LookAheadWhenRunning = true -- turn this on since we do big bursts of d
 ENT.FistDamageMul = 6
 ENT.FistRangeMul = 2
 ENT.FistAttackSpeedMul = 1.5
-ENT.FistAttackAdditionalDelay = 0.33
+ENT.FistAttackAdditionalDelay = 0.68
 ENT.FistHitFrameMul = 17
 ENT.DuelEnemyDist = 650
 
