@@ -86,7 +86,7 @@ if CLIENT then
 end
 
 ENT.SpawnHealth = 2000
-ENT.SpawnHealthPerPlayer = 500
+ENT.ExtraSpawnHealthPerPlayer = 500
 ENT.WalkSpeed = 130
 ENT.MoveSpeed = 500
 ENT.RunSpeed = 750

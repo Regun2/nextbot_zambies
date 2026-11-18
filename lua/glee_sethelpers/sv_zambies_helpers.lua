@@ -86,6 +86,17 @@ function setHelpers.zamb_MapIsMostlySky()
 
 end
 
+local SHEPHERD_HEALTH = 10000
+local SHEPHERD_HEALTH_PER_PLAYER = 1000
+
+-- a .preSpawnedFuncs entry, every shepherd misery shares it so they all get tuned here
+-- the entity's own health stays low, for sandbox and stray spawns
+function setHelpers.zamb_PreSpawnedShepherd( _, spawned )
+    spawned.SpawnHealth = SHEPHERD_HEALTH
+    spawned.ExtraSpawnHealthPerPlayer = SHEPHERD_HEALTH_PER_PLAYER
+
+end
+
 -- a .postSpawnedFuncs entry, like zamb_ScreamAfterSpawning but every one screams
 function setHelpers.zamb_AlwaysScreamAfterSpawning( _, spawned )
     timer.Simple( math.random( 5, 30 ), function()

@@ -1,4 +1,6 @@
 
+local preSpawnedShepherd = GAMEMODE.setHelpers.zamb_PreSpawnedShepherd
+
 local zambieSpawnSet = {
     name = "zambies_glee_shepherd_boomers", -- unique name
     prettyName = "Surprise! Boomers!",
@@ -24,6 +26,7 @@ local zambieSpawnSet = {
             minCount = { 1 },
             maxCount = { 1 },
             isBoss = true,
+            preSpawnedFuncs = { preSpawnedShepherd },
         },
         {
             name = "zambie_boomer",

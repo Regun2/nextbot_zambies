@@ -1,5 +1,6 @@
 
 local genericZambieCounter = "terminator_nextbot_zambie*"
+local preSpawnedShepherd = GAMEMODE.setHelpers.zamb_PreSpawnedShepherd
 
 -- the slow horde's roster, the shepherd brings them to you
 local zambieSpawnSet = {
@@ -28,6 +29,7 @@ local zambieSpawnSet = {
             minCount = { 1 },
             maxCount = { 1 },
             isBoss = true,
+            preSpawnedFuncs = { preSpawnedShepherd },
         },
         {
             name = "zambie_slow",

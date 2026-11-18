@@ -1,4 +1,6 @@
 
+local preSpawnedShepherd = GAMEMODE.setHelpers.zamb_PreSpawnedShepherd
+
 local zambieSpawnSet = {
     name = "zambies_glee_shepherd_wraiths", -- unique name
     prettyName = "The Wraith Shepherd",
@@ -26,6 +28,7 @@ local zambieSpawnSet = {
             minCount = { 1 },
             maxCount = { 1 },
             isBoss = true,
+            preSpawnedFuncs = { preSpawnedShepherd },
         },
         {
             name = "zambie_wraith_torso",

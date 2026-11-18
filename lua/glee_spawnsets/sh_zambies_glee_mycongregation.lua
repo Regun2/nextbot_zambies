@@ -14,8 +14,8 @@ if SERVER then
         maxSpawnCount = "zambies_glee_thehorde",
         maxSpawnDist = "zambies_glee_thehorde",
         hordeSpawn = true,
-        roundEndSound = "zambies_glee_thehorde",
-        roundStartSound = "zambies_glee_thehorde",
+        roundEndSound = "music/hl1_song6.mp3",
+        roundStartSound = "music/ravenholm_1.mp3",
         chanceToBeVotable = 1,
         defaultWeapons = { "gmod_camera", "termhunt_radio" }, -- no crowbar, the annabelle's all they get
         importedMiserySpawns = {

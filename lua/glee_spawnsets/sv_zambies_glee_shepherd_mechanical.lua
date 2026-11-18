@@ -1,6 +1,7 @@
 
 local screamAfterSpawning = GAMEMODE.setHelpers.zamb_ScreamAfterSpawning()
 local alwaysScreamAfterSpawning = GAMEMODE.setHelpers.zamb_AlwaysScreamAfterSpawning
+local preSpawnedShepherd = GAMEMODE.setHelpers.zamb_PreSpawnedShepherd
 
 local zambieSpawnSet = {
     name = "zambies_glee_shepherd_mechanical", -- unique name
@@ -28,6 +29,7 @@ local zambieSpawnSet = {
             minCount = { 1 },
             maxCount = { 1 },
             isBoss = true,
+            preSpawnedFuncs = { preSpawnedShepherd },
         },
         {
             name = "zambie_mecha",
