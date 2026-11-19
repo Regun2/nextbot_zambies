@@ -220,6 +220,10 @@ function ENT:PushingThink()
     local nearestToMe = disrespector:NearestPoint( myPos )
     if nearestToMe:Distance( myPos ) > 100 then return end
 
+    -- listeners may unfreeze it, eg glee's smart sleeper
+    hook.Run( "zambies_glee_preapplyweakforce_toprop", disrespector, self )
+    if not disrespectorsPhys:IsMotionEnabled() then return end
+
     local toDisrespector = terminator_Extras.dirToPos( self:GetShootPos(), disrespector:WorldSpaceCenter() )
     local force = toDisrespector * 10000 * self.PhatntomThrowMul
     disrespectorsPhys:ApplyForceOffset( force, self:GetShootPos() )
@@ -236,6 +240,12 @@ function ENT:PhantomCatapultDisrespectorAt( at )
     local disrespector = self:GetCachedDisrespector()
     if not IsValid( disrespector ) then return end
     if disrespector:IsPlayer() or disrespector:IsNPC() or disrespector:IsNextBot() then return end
+
+    -- listeners may unfreeze it, eg glee's smart sleeper
+    -- checked before the wind-up, a throw that can't happen shouldn't be telegraphed
+    hook.Run( "zambies_glee_preapplyforce_toprop", disrespector, self )
+    local physBefore = disrespector:GetPhysicsObject()
+    if IsValid( physBefore ) and not physBefore:IsMotionEnabled() then return end
 
     local atFallback
     if IsValid( at ) then
