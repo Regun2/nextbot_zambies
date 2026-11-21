@@ -16,7 +16,7 @@ ENT.PhantomColor = Color( 65, 70, 80 )
 ENT.PhantomParticleColor = Vector( 65, 70, 80 )
 ENT.PhantomMaterialName = "nextbot_zambies/phantom_skin"
 ENT.PhantomOverlayMaterialName = "nextbot_zambies/phantom_warp"
-ENT.PhantomAlpha = 130
+ENT.PhantomAlpha = 255
 
 function ENT:GetPhantomParticleColor()
     return self.PhantomParticleColor
@@ -33,7 +33,25 @@ end
 if CLIENT then
     language.Add( "terminator_nextbot_zambiephantom", ENT.PrintName )
 
+    -- draw after opaque things like players and npcs, so they dont cover the phantom
+    ENT.RenderGroup = RENDERGROUP_TRANSLUCENT
+
     local overlayMaterials = {}
+
+    -- the warp overlay samples a copy of the screen, that copy has to be refreshed from the main translucent pass only
+    -- refreshing it from anywhere else, like the c-menu hover halo pass, turns the whole screen black
+    local inTranslucentPass = false
+
+    hook.Add( "PreDrawTranslucentRenderables", "zamb_phantom_translucentpass", function( drawingDepth, drawingSkybox )
+        if drawingDepth or drawingSkybox then return end
+        inTranslucentPass = true
+
+    end )
+
+    hook.Add( "PostDrawTranslucentRenderables", "zamb_phantom_translucentpass", function()
+        inTranslucentPass = false
+
+    end )
 
     function ENT:GetPhantomOverlayMaterial()
         local name = self.PhantomOverlayMaterialName
@@ -59,11 +77,13 @@ if CLIENT then
 
     -- phantom_skin is the model's material, phantom_warp is drawn over it as a second pass
     function ENT:Draw()
+        -- skin first
         BaseClass.Draw( self )
 
-        -- warp materials sample the screen behind them, refresh that copy or it shows stale frames (hall of mirrors)
+        if not inTranslucentPass then return end
+
+        -- then copy the screen, so the warp refracts the skin too, and draw the warp over it
         render.UpdateScreenEffectTexture()
-        render.UpdateRefractTexture()
 
         render.MaterialOverride( self:GetPhantomOverlayMaterial() )
         self:DrawModel()
@@ -528,4 +548,3 @@ function ENT:PerformTeleport( data, dmg )
     self:CreatePhantomExplosion( startPos, 40 )
 
 end
-
