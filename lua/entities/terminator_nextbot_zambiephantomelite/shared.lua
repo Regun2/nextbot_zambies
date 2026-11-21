@@ -14,11 +14,11 @@ list.Set( "NPC", "terminator_nextbot_zambiephantomelite", {
 
 ENT.PhantomColor = Color( 25, 30, 35 )
 ENT.PhantomParticleColor = Vector( 25, 30, 35 )
-ENT.PhantomAlpha = 110
+ENT.PhantomAlpha = 255
 
 ENT.EnragedColor = Color( 115, 40, 40 )
 ENT.EnragedParticleColor = Vector( 115, 40, 40 )
-ENT.EnragedAlpha = 140
+ENT.EnragedAlpha = 255
 
 if CLIENT then
     language.Add( "terminator_nextbot_zambiephantomelite", ENT.PrintName )
